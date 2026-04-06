@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 2 - HTML Completo</title>
+    <link rel="stylesheet" href="../estilos.css">
+
+    <style>
+        section {
+            margin-bottom: 40px;
+        }
+
+        code {
+            background: #eee;
+            padding: 3px;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="../index.html">Inicio</a>
+</nav>
+
+<main>
+
+<h1>Capítulo 2 — HTML</h1>
+<p>HTML (HyperText Markup Language) es el lenguaje que se utiliza para crear la estructura de las páginas web.</p>
+
+<!-- ================= ESTRUCTURA ================= -->
+<section>
+<h2>2.1 Estructura</h2>
+
+<h3>Tipo de documento</h3>
+<p>El documento HTML comienza con <code>&lt;!DOCTYPE html&gt;</code>, que indica al navegador que se está usando HTML5.</p>
+
+<h3>Elementos estructurales</h3>
+<p>Los elementos estructurales organizan la página:</p>
+
+<ul>
+    <li><code>&lt;header&gt;</code>: encabezado</li>
+    <li><code>&lt;nav&gt;</code>: navegación</li>
+    <li><code>&lt;main&gt;</code>: contenido principal</li>
+    <li><code>&lt;section&gt;</code>: secciones</li>
+    <li><code>&lt;footer&gt;</code>: pie de página</li>
+</ul>
+
+<h3>Ejemplo:</h3>
+
+<header style="background: lightgray; padding:10px;">
+    Encabezado
+</header>
+
+<section style="background: lightblue; padding:10px;">
+    Sección de contenido
+</section>
+
+<footer style="background: lightgray; padding:10px;">
+    Pie de página
+</footer>
+
+<h3>Atributos globales</h3>
+<p>Se pueden usar en casi todas las etiquetas:</p>
+<ul>
+    <li><code>id</code>: identificador único</li>
+    <li><code>class</code>: agrupar elementos</li>
+    <li><code>style</code>: aplicar estilos</li>
+    <li><code>title</code>: texto al pasar el mouse</li>
+</ul>
+
+<button><a href="capitulo2_estructura.html">Ver más...</a></button>
+
+</section>
+
+<!-- ================= CONTENIDO ================= -->
+<section>
+<h2>2.2 Contenido</h2>
+
+<h3>Texto</h3>
+<p>HTML permite estructurar texto con etiquetas:</p>
+
+<h1>Encabezado h1</h1>
+<h2>Encabezado h2</h2>
+<p>Este es un párrafo.</p>
+<strong>Texto en negrita</strong><br>
+<em>Texto en cursiva</em>
+
+<h3>Enlaces</h3>
+<p>Se crean con la etiqueta <code>&lt;a&gt;</code>:</p>
+<a href="https://www.google.com" target="_blank">Ir a Google</a>
+
+<h3>Imágenes</h3>
+<p>Se insertan con <code>&lt;img&gt;</code>:</p>
+<img src="Cocos-Islands.webp" alt="Ejemplo" style="height: 200px;">
+
+<h3>Listas</h3>
+<p>Existen listas ordenadas y desordenadas:</p>
+
+<ul>
+    <li>Lista desordenada</li>
+    <li>Elemento</li>
+</ul>
+
+<ol>
+    <li>Lista ordenada</li>
+    <li>Elemento</li>
+</ol>
+
+<h3>Tablas</h3>
+<p>Se usan para mostrar datos:</p>
+
+<table>
+    <tr>
+        <th>Nombre</th>
+        <th>Edad</th>
+    </tr>
+    <tr>
+        <td>Ana</td>
+        <td>22</td>
+    </tr>
+</table>
+
+</section>
+
+<button><a href="capitulo2_contenido.html">Ver más...</a></button>
+
+<section>
+<h2>2.3 Formularios</h2>
+
+<h3>Definición</h3>
+<p>Los formularios permiten enviar datos del usuario.</p>
+
+<h3>Elementos</h3>
+
+<form>
+    <label>Nombre:</label><br>
+    <input type="text" name="nombre"><br><br>
+
+    <label>Email:</label><br>
+    <input type="email" name="email"><br><br>
+
+    <label>Contraseña:</label><br>
+    <input type="password"><br><br>
+
+    <label>Género:</label><br>
+    <input type="radio" name="genero"> Hombre
+    <input type="radio" name="genero"> Mujer<br><br>
+
+    <label>Intereses:</label><br>
+    <input type="checkbox"> Programación
+    <input type="checkbox"> Diseño<br><br>
+
+    <label>País:</label><br>
+    <select>
+        <option>Colombia</option>
+        <option>México</option>
+    </select><br><br>
+
+    <label>Mensaje:</label><br>
+    <textarea></textarea><br><br>
+
+    <input type="submit" value="Enviar">
+</form>
+
+<h3>Envío del formulario</h3>
+<p>Se usa el atributo <code>action</code> para indicar a dónde se envían los datos y <code>method</code> (GET o POST).</p>
+
+</section>
+
+<button><a href="capitulo2_formularios.html">Ver más...</a></button>
+
+</main>
+
+<footer>
+    <p>Fin del Capítulo 2</p>
+</footer>
+
+</body>
+</html>

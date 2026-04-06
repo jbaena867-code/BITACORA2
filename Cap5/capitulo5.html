@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Capítulo 5 - Diseño Adaptable Completo</title>
+<link rel="stylesheet" href="../estilos.css">
+
+<style>
+
+/* ===== GENERAL ===== */
+section {
+    margin-bottom: 50px;
+}
+
+.demo {
+    padding: 20px;
+    background: lightblue;
+    margin: 10px 0;
+    text-align: center;
+}
+
+/* ===== FLEXIBLE ===== */
+.flex-container {
+    display: flex;
+    gap: 10px;
+}
+
+.flex-item {
+    flex: 1;
+    background: steelblue;
+    color: white;
+    padding: 20px;
+}
+
+/* ===== IMÁGENES ===== */
+.img-responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ===== BOX SIZING ===== */
+.box {
+    width: 200px;
+    padding: 20px;
+    border: 5px solid black;
+    margin: 10px;
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* Tablets */
+@media (max-width: 900px) {
+    body {
+        background: #f0f8ff;
+    }
+
+    .flex-container {
+        flex-direction: column;
+    }
+}
+
+/* Móviles */
+@media (max-width: 600px) {
+    body {
+        background: #fff3cd;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+}
+
+</style>
+
+</head>
+<body>
+
+<nav>
+    <a href="../index.html">Inicio</a>
+</nav>
+
+<main>
+
+<h1>Capítulo 5 — Diseño Web Adaptable</h1>
+<p>El diseño adaptable (Responsive Design) permite que una página se vea bien en cualquier dispositivo: celular, tablet o computadora.</p>
+
+<!-- ================= WEB MOVIL ================= -->
+<section>
+<h2>5.1 Web móvil</h2>
+
+<h3>Meta viewport</h3>
+<p>Esta etiqueta es esencial para que el diseño funcione en móviles:</p>
+<code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code>
+
+<div class="demo">Este contenido se adapta al tamaño de la pantalla</div>
+
+</section>
+
+<!-- ================= MEDIA QUERIES ================= -->
+<section>
+<h2>Media Queries</h2>
+
+<p>Permiten aplicar estilos según el tamaño de pantalla.</p>
+
+<ul>
+    <li>Desktop: más de 900px</li>
+    <li>Tablet: menos de 900px</li>
+    <li>Móvil: menos de 600px</li>
+</ul>
+
+<p>Prueba cambiar el tamaño de la ventana 👀</p>
+
+</section>
+
+<!-- ================= FLEXIBILIDAD ================= -->
+<section>
+<h2>Flexibilidad</h2>
+
+<p>Los diseños modernos usan Flexbox para adaptarse automáticamente.</p>
+
+<div class="flex-container">
+    <div class="flex-item">Columna 1</div>
+    <div class="flex-item">Columna 2</div>
+    <div class="flex-item">Columna 3</div>
+</div>
+
+</section>
+
+<!-- ================= BOX SIZING ================= -->
+<section>
+<h2>Box-sizing</h2>
+
+<p>Controla cómo se calcula el tamaño de las cajas.</p>
+
+<div class="box">Caja normal</div>
+
+<p>Tip: usar <code>box-sizing: border-box;</code> facilita el diseño.</p>
+
+</section>
+
+<!-- ================= FIJO Y FLEXIBLE ================= -->
+<section>
+<h2>Diseño fijo vs flexible</h2>
+
+<p><strong>Fijo:</strong> usa tamaños en px</p>
+<p><strong>Flexible:</strong> usa %, flex o vw</p>
+
+<div class="demo" style="width: 50%;">Caja flexible (50%)</div>
+
+</section>
+
+<!-- ================= TEXTO ================= -->
+<section>
+<h2>Texto adaptable</h2>
+
+<p>Se puede usar unidades como <code>em</code> o <code>rem</code>.</p>
+
+<p style="font-size: 2rem;">Texto adaptable</p>
+
+</section>
+
+<!-- ================= IMÁGENES ================= -->
+<section>
+<h2>Imágenes adaptables</h2>
+
+<p>Las imágenes deben ajustarse al contenedor:</p>
+
+<img src="https://via.placeholder.com/600x300" class="img-responsive">
+
+</section>
+
+<!-- ================= EJEMPLO REAL ================= -->
+<section>
+<h2>Aplicación en la vida real</h2>
+
+<p>Ejemplo de layout adaptable:</p>
+
+<div class="flex-container">
+    <div class="flex-item">Menú</div>
+    <div class="flex-item">Contenido</div>
+    <div class="flex-item">Extra</div>
+</div>
+
+<p>En móvil se vuelven columnas verticales automáticamente.</p>
+
+</section>
+
+</main>
+
+<footer>
+    <p>Fin del Capítulo 5</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Capítulo 4 - Diseño Web Completo</title>
+<link rel="stylesheet" href="../estilos.css">
+
+<style>
+
+/* ===== GENERAL ===== */
+section {
+    margin-bottom: 50px;
+}
+
+.demo-box {
+    background: lightblue;
+    padding: 20px;
+    margin: 10px;
+    border: 2px solid black;
+}
+
+/* ===== DISPLAY ===== */
+.inline {
+    display: inline;
+    background: yellow;
+}
+
+.block {
+    display: block;
+    background: orange;
+}
+
+/* ===== FLOAT ===== */
+.float-container {
+    border: 2px solid black;
+    overflow: auto;
+}
+
+.float-box {
+    float: left;
+    width: 100px;
+    height: 100px;
+    background: red;
+    margin: 10px;
+}
+
+/* ===== POSITION ===== */
+.relative {
+    position: relative;
+    top: 10px;
+    left: 10px;
+    background: lightgreen;
+}
+
+.absolute-container {
+    position: relative;
+    height: 200px;
+    border: 2px solid black;
+}
+
+.absolute {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: purple;
+    color: white;
+    padding: 10px;
+}
+
+/* ===== FLEXBOX ===== */
+.flex-container {
+    display: flex;
+    gap: 10px;
+    background: #ddd;
+    padding: 10px;
+}
+
+.flex-item {
+    background: steelblue;
+    color: white;
+    padding: 20px;
+    flex: 1;
+    text-align: center;
+}
+
+/* ===== COLUMNAS ===== */
+.columnas {
+    column-count: 3;
+    column-gap: 20px;
+}
+
+/* ===== EJEMPLO REAL ===== */
+.layout {
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background: black;
+    color: white;
+    padding: 15px;
+}
+
+.main {
+    display: flex;
+}
+
+.sidebar {
+    width: 200px;
+    background: gray;
+    color: white;
+    padding: 10px;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    background: #f4f4f4;
+}
+
+.footer {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+</style>
+
+</head>
+<body>
+
+<nav>
+    <a href="../index.html">Inicio</a>
+</nav>
+
+<main>
+
+<h1>Capítulo 4 — Diseño Web</h1>
+<p>El diseño web se enfoca en cómo organizar y distribuir los elementos en la página.</p>
+
+<!-- ================= CAJAS ================= -->
+<section>
+<h2>4.1 Cajas</h2>
+
+<h3>Display</h3>
+<p>Define cómo se comporta un elemento:</p>
+
+<div class="inline">Inline</div>
+<div class="inline">Inline</div>
+
+<div class="block">Block</div>
+
+</section>
+
+<!-- ================= MODELO TRADICIONAL ================= -->
+<section>
+<h2>4.2 Modelo de Caja Tradicional</h2>
+
+<h3>Contenido flotante (float)</h3>
+<p>Permite colocar elementos uno al lado del otro.</p>
+
+<div class="float-container">
+    <div class="float-box"></div>
+    <div class="float-box"></div>
+    <div class="float-box"></div>
+</div>
+
+<h3>Posicionamiento</h3>
+
+<p><strong>Relative:</strong></p>
+<div class="demo-box relative">Caja relative</div>
+
+<p><strong>Absolute:</strong></p>
+<div class="absolute-container">
+    <div class="absolute">Caja absoluta</div>
+</div>
+
+<h3>Columnas</h3>
+<div class="columnas">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus.</p>
+    <p>Otro texto para mostrar cómo se distribuye en columnas automáticamente.</p>
+</div>
+
+</section>
+
+<!-- ================= FLEXBOX ================= -->
+<section>
+<h2>4.3 Modelo de Caja Flexible (Flexbox)</h2>
+
+<h3>Contenedor flexible</h3>
+<p>Se activa con <code>display: flex</code></p>
+
+<div class="flex-container">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+</div>
+
+<h3>Organización</h3>
+<p>Flexbox permite alinear, distribuir y adaptar elementos fácilmente.</p>
+
+</section>
+
+<!-- ================= EJEMPLO REAL ================= -->
+<section>
+<h2>Aplicación en la vida real</h2>
+<p>Ejemplo de estructura de una página web completa:</p>
+
+<div class="layout">
+
+    <div class="header">
+        Header (Encabezado)
+    </div>
+
+    <div class="main">
+        <div class="sidebar">
+            Sidebar (Menú)
+        </div>
+
+        <div class="content">
+            Contenido principal
+        </div>
+    </div>
+
+    <div class="footer">
+        Footer (Pie de página)
+    </div>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+    <p>Fin del Capítulo 4</p>
+</footer>
+
+</body>
+</html>

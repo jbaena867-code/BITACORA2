@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2.3 Formularios en HTML</title>
+<link rel="stylesheet" href="../estilos.css">
+
+<style>
+
+/* ===== GENERAL ===== */
+section {
+    margin-bottom: 50px;
+}
+
+code {
+    background: #eee;
+    padding: 3px;
+}
+
+pre {
+    background: #f4f4f4;
+    padding: 10px;
+    overflow-x: auto;
+}
+
+/* ===== FORMULARIOS ===== */
+form {
+    background: #f9f9f9;
+    padding: 20px;
+    border: 2px solid #ccc;
+    max-width: 500px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0 15px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    width: auto;
+}
+
+.ejemplo {
+    border: 2px solid black;
+    padding: 15px;
+    margin-top: 10px;
+}
+
+</style>
+
+</head>
+<body>
+
+<nav>
+    <a href="capitulo2.html">Regresar</a>
+</nav>
+
+<main>
+
+<h1>2.3 Formularios en HTML</h1>
+<p>Los formularios permiten recoger información del usuario y enviarla a un servidor.</p>
+
+<!-- ================= DEFINICION ================= -->
+<section>
+<h2>Definición</h2>
+
+<p>Un formulario se crea con la etiqueta <code>&lt;form&gt;</code>.</p>
+
+<pre><code>
+&lt;form action="servidor.php" method="POST"&gt;
+    &lt;input type="text"&gt;
+&lt;/form&gt;
+</code></pre>
+
+<ul>
+    <li><code>action</code>: a dónde se envían los datos</li>
+    <li><code>method</code>: cómo se envían (GET o POST)</li>
+</ul>
+
+</section>
+
+<!-- ================= ELEMENTOS ================= -->
+<section>
+<h2>Elementos de formulario</h2>
+
+<h3>Input de texto</h3>
+<div class="ejemplo">
+<input type="text" placeholder="Escribe tu nombre">
+</div>
+
+<h3>Email</h3>
+<div class="ejemplo">
+<input type="email" placeholder="correo@email.com">
+</div>
+
+<h3>Password</h3>
+<div class="ejemplo">
+<input type="password" placeholder="Contraseña">
+</div>
+
+<h3>Número</h3>
+<div class="ejemplo">
+<input type="number" min="1" max="100">
+</div>
+
+<h3>Fecha</h3>
+<div class="ejemplo">
+<input type="date">
+</div>
+
+<h3>Color</h3>
+<div class="ejemplo">
+<input type="color">
+</div>
+
+<h3>Archivo</h3>
+<div class="ejemplo">
+<input type="file">
+</div>
+
+</section>
+
+<!-- ================= SELECCION ================= -->
+<section>
+<h2>Opciones de selección</h2>
+
+<h3>Radio (una sola opción)</h3>
+<div class="ejemplo">
+<input type="radio" name="genero"> Hombre
+<input type="radio" name="genero"> Mujer
+</div>
+
+<h3>Checkbox (múltiples opciones)</h3>
+<div class="ejemplo">
+<input type="checkbox"> HTML
+<input type="checkbox"> CSS
+</div>
+
+<h3>Select (lista desplegable)</h3>
+<div class="ejemplo">
+<select>
+    <option>Colombia</option>
+    <option>México</option>
+</select>
+</div>
+
+</section>
+
+<!-- ================= TEXTAREA ================= -->
+<section>
+<h2>Área de texto</h2>
+
+<div class="ejemplo">
+<textarea rows="4" placeholder="Escribe un mensaje"></textarea>
+</div>
+
+</section>
+
+<!-- ================= BOTONES ================= -->
+<section>
+<h2>Botones</h2>
+
+<div class="ejemplo">
+<input type="submit" value="Enviar">
+<input type="reset" value="Limpiar">
+<button>Botón normal</button>
+</div>
+
+</section>
+
+<!-- ================= FORMULARIO COMPLETO ================= -->
+<section>
+<h2>Formulario completo (ejemplo real)</h2>
+
+<form>
+
+<label>Nombre:</label>
+<input type="text" required>
+
+<label>Email:</label>
+<input type="email" required>
+
+<label>Contraseña:</label>
+<input type="password" required>
+
+<label>Edad:</label>
+<input type="number" min="1" max="100">
+
+<label>Fecha de nacimiento:</label>
+<input type="date">
+
+<label>Género:</label>
+<input type="radio" name="genero"> Hombre
+<input type="radio" name="genero"> Mujer
+
+<label>Intereses:</label>
+<input type="checkbox"> Programación
+<input type="checkbox"> Diseño
+
+<label>País:</label>
+<select>
+    <option>Colombia</option>
+    <option>España</option>
+</select>
+
+<label>Mensaje:</label>
+<textarea></textarea>
+
+<input type="submit" value="Registrarse">
+
+</form>
+
+</section>
+
+<!-- ================= ENVIO ================= -->
+<section>
+<h2>Envío del formulario</h2>
+
+<p>Cuando el usuario hace clic en "Enviar":</p>
+
+<ul>
+    <li>Los datos se envían al servidor</li>
+    <li>Se usa <code>action</code> para la URL</li>
+    <li>Se usa <code>method="GET"</code> o <code>POST</code></li>
+</ul>
+
+<h3>Diferencias</h3>
+
+<ul>
+    <li><strong>GET:</strong> datos visibles en la URL</li>
+    <li><strong>POST:</strong> datos ocultos (más seguro)</li>
+</ul>
+
+</section>
+
+<!-- ================= VALIDACIONES ================= -->
+<section>
+<h2>Validaciones</h2>
+
+<p>HTML permite validar datos automáticamente:</p>
+
+<ul>
+    <li><code>required</code>: obligatorio</li>
+    <li><code>min / max</code>: límites</li>
+    <li><code>maxlength</code>: máximo de caracteres</li>
+    <li><code>pattern</code>: expresión regular</li>
+</ul>
+
+<div class="ejemplo">
+<input type="text" required placeholder="Campo obligatorio">
+</div>
+
+</section>
+
+<!-- ================= ATRIBUTOS ================= -->
+<section>
+<h2>Atributos importantes</h2>
+
+<ul>
+    <li><code>name</code>: nombre del campo (clave para enviar datos)</li>
+    <li><code>placeholder</code>: texto de ayuda</li>
+    <li><code>value</code>: valor inicial</li>
+    <li><code>disabled</code>: desactiva el campo</li>
+</ul>
+
+</section>
+
+<!-- ================= BUENAS PRACTICAS ================= -->
+<section>
+<h2>Buenas prácticas</h2>
+
+<ul>
+    <li>Usar etiquetas <code>&lt;label&gt;</code></li>
+    <li>Validar datos siempre</li>
+    <li>Usar <code>name</code> en inputs</li>
+    <li>Evitar formularios muy largos</li>
+    <li>Diseñar formularios claros</li>
+</ul>
+
+</section>
+
+</main>
+
+<footer>
+    <p>Fin de la sección 2.3</p>
+</footer>
+
+</body>
+</html>

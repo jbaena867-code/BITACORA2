@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3.2 Referencias CSS - Selectores</title>
+<link rel="stylesheet" href="../estilos.css">
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+}
+
+section {
+    margin-bottom: 50px;
+}
+
+code {
+    background: #eee;
+    padding: 3px;
+}
+
+pre {
+    background: #f4f4f4;
+    padding: 10px;
+    overflow-x: auto;
+}
+
+/* ===== DEMOS VISUALES ===== */
+.ejemplo {
+    border: 2px solid black;
+    padding: 15px;
+    margin-top: 10px;
+}
+
+div.demo {
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.id-demo { background: lightblue; }
+.class-demo { background: lightgreen; }
+.pseudo-demo { padding: 10px; border: 1px solid black; }
+.miClase { background: yellow; }
+#miId { font-weight: bold; }
+p.texto { color: purple; }
+div#contenedor { background: lightgray; }
+div p { font-style: italic; }
+</style>
+
+</head>
+<body>
+
+<nav>
+    <a href="capitulo3.html">Regresar</a>
+</nav>
+
+<main>
+
+<h1>3.2 Referencias en CSS (Selectores)</h1>
+<p>Los selectores permiten apuntar a elementos específicos del HTML para aplicar estilos.</p>
+
+<section>
+<h2>1. Selectores básicos</h2>
+
+<h3>Selector de etiqueta</h3>
+<pre><code>p { color: red; }</code></pre>
+<div class="ejemplo">
+<p>Este texto es un párrafo seleccionado por su etiqueta</p>
+</div>
+
+<h3>Selector de clase</h3>
+<pre><code>.miClase { background: yellow; }</code></pre>
+<div class="ejemplo miClase">
+<p>Este texto está dentro de una clase "miClase"</p>
+</div>
+
+<h3>Selector de ID</h3>
+<pre><code>#miId { font-weight: bold; }</code></pre>
+<div class="ejemplo id-demo" id="miId">
+<p>Este texto tiene ID "miId"</p>
+</div>
+
+</section>
+
+<section>
+<h2>2. Selectores combinados</h2>
+
+<h3>Etiqueta + clase</h3>
+<pre><code>p.texto { color: purple; }</code></pre>
+
+<div class="ejemplo">
+<p class="texto">Texto de párrafo con clase "texto"</p>
+</div>
+
+<h3>Etiqueta + ID</h3>
+<pre><code>div#contenedor { background: lightgray; }</code></pre>
+
+<div class="ejemplo" id="contenedor">
+<p>Este div tiene ID "contenedor"</p>
+</div>
+
+<h3>Descendientes</h3>
+<pre><code>div p { font-style: italic; }</code></pre>
+<div class="ejemplo">
+<div>
+<p>Este párrafo está dentro de un div</p>
+</div>
+</div>
+
+</section>
+
+<section>
+<h2>3. Seudoclases</h2>
+
+<p>Permiten aplicar estilos a estados especiales de los elementos.</p>
+
+<ul>
+    <li><code>:hover</code> → al pasar el mouse</li>
+    <li><code>:active</code> → al hacer clic</li>
+    <li><code>:first-child</code> → primer hijo de su contenedor</li>
+    <li><code>:last-child</code> → último hijo de su contenedor</li>
+    <li><code>:nth-child(n)</code> → enésimo hijo</li>
+</ul>
+
+<h3>Ejemplo Hover</h3>
+<div class="ejemplo pseudo-demo">
+<a href="#" class="pseudo-demo-link">Pasa el mouse aquí</a>
+</div>
+
+<style>
+.pseudo-demo-link:hover {
+    color: red;
+    font-weight: bold;
+}
+</style>
+
+<h3>Ejemplo First-child / Last-child</h3>
+<div class="ejemplo pseudo-demo">
+<p>Primer hijo</p>
+<p>Segundo hijo</p>
+<p>Último hijo</p>
+</div>
+
+<style>
+.pseudo-demo p:first-child { color: blue; }
+.pseudo-demo p:last-child { color: green; }
+</style>
+
+<h3>Ejemplo nth-child</h3>
+<div class="ejemplo pseudo-demo">
+<p>Elemento 1</p>
+<p>Elemento 2</p>
+<p>Elemento 3</p>
+<p>Elemento 4</p>
+</div>
+
+<style>
+.pseudo-demo p:nth-child(2n) { background: #ddd; }
+</style>
+
+<button><a href="capitulo3_seudoclases.html">Ver más...</a></button>
+
+</section>
+
+
+<section>
+<h2>4. Otros selectores útiles</h2>
+
+<ul>
+    <li><code>[atributo]</code>: selecciona por atributo</li>
+    <li><code>[atributo="valor"]</code>: igual a valor</li>
+    <li><code>[atributo^="valor"]</code>: empieza con valor</li>
+    <li><code>[atributo$="valor"]</code>: termina con valor</li>
+    <li><code>[atributo*="valor"]</code>: contiene valor</li>
+</ul>
+
+<div class="ejemplo">
+<a href="https://google.com">Enlace Google</a>
+<a href="https://facebook.com">Enlace Facebook</a>
+</div>
+
+<style>
+a[href^="https://google"] { color: red; }
+</style>
+
+<p>Solo el enlace de Google cambia de color por el selector de atributo ^="https://google"</p>
+
+<button><a href="capitulo3_otros_selectores.html">Ver más...</a></button>
+
+</section>
+
+<section>
+<h2>Buenas prácticas con selectores</h2>
+
+<ul>
+<li>Usar clases y IDs descriptivos</li>
+<li>Evitar usar demasiados selectores complejos</li>
+<li>Priorizar selectores de clase para consistencia</li>
+<li>Combinar selectores cuando sea necesario para especificidad</li>
+<li>Documentar estilos en CSS externo</li>
+</ul>
+
+</section>
+
+</main>
+
+<footer>
+    <p>Fin de la sección 3.2</p>
+</footer>
+
+</body>
+</html>
