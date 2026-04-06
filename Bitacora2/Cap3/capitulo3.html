@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Capítulo 3 - CSS Completo</title>
+<link rel="stylesheet" href="../estilos.css">
+
+<style>
+
+/* ===== ESTILOS GENERALES ===== */
+section {
+    margin-bottom: 40px;
+}
+
+code {
+    background: #eee;
+    padding: 3px;
+}
+
+/* ===== SELECTORES ===== */
+.clase-ejemplo {
+    color: blue;
+}
+
+#id-ejemplo {
+    color: red;
+}
+
+/* ===== CAJA ===== */
+.caja {
+    width: 200px;
+    height: 100px;
+    background: orange;
+    margin: 10px;
+    padding: 10px;
+    border: 3px solid black;
+}
+
+/* ===== TEXTO ===== */
+.texto {
+    font-size: 20px;
+    font-family: Arial;
+    text-align: center;
+}
+
+/* ===== COLORES ===== */
+.color1 { background: red; color: white; }
+.color2 { background: rgb(0, 128, 0); color: white; }
+
+/* ===== SOMBRAS ===== */
+.sombra {
+    box-shadow: 5px 5px 10px gray;
+}
+
+/* ===== TRANSFORMACIONES ===== */
+.transformar:hover {
+    transform: scale(1.2);
+}
+
+/* ===== TRANSICIONES ===== */
+.transicion {
+    background: blue;
+    color: white;
+    padding: 10px;
+    transition: 0.5s;
+}
+.transicion:hover {
+    background: green;
+}
+
+/* ===== ANIMACIONES ===== */
+@keyframes mover {
+    from { transform: translateX(0); }
+    to { transform: translateX(100px); }
+}
+
+.animacion {
+    width: 100px;
+    height: 50px;
+    background: purple;
+    animation: mover 2s infinite alternate;
+}
+
+</style>
+
+</head>
+<body>
+
+<nav>
+    <a href="../index.html">Inicio</a>
+</nav>
+
+<main>
+
+<h1>Capítulo 3 — CSS</h1>
+<p>CSS (Cascading Style Sheets) se utiliza para dar estilo y diseño a las páginas web.</p>
+
+<!-- ================= ESTILOS ================= -->
+<section>
+<h2>3.1 Estilos</h2>
+
+<h3>Aplicando estilos</h3>
+<p>Hay 3 formas de aplicar CSS:</p>
+
+<ul>
+    <li><strong>En línea:</strong> usando <code>style=""</code></li>
+    <li><strong>Interno:</strong> dentro de &lt;style&gt;</li>
+    <li><strong>Externo:</strong> archivo .css</li>
+</ul>
+
+<p style="color: green;">Ejemplo de estilo en línea</p>
+
+<h3>Hojas en cascada</h3>
+<p>El navegador aplica estilos según prioridad (inline > interno > externo).</p>
+
+<button><a href="capitulo3_estilos.html">Ver más...</a></button>
+
+</section>
+
+<!-- ================= SELECTORES ================= -->
+<section>
+<h2>3.2 Referencias (Selectores)</h2>
+
+<h3>Nombres de etiquetas</h3>
+<p>Se puede aplicar estilo directamente a etiquetas:</p>
+
+<h3>Atributo class</h3>
+<p class="clase-ejemplo">Texto usando class</p>
+
+<h3>Atributo id</h3>
+<p id="id-ejemplo">Texto usando id</p>
+
+<h3>Otros atributos</h3>
+<p>También se pueden usar atributos como <code>type</code>, <code>name</code>, etc.</p>
+
+<h3>Seudoclases</h3>
+<p>Pasan cuando ocurre una acción:</p>
+
+<button class="transicion">Pasa el mouse</button>
+
+<button><a href="capitulo3_referencias.html">Ver más...</a></button>
+
+</section>
+
+<!-- ================= PROPIEDADES ================= -->
+<section>
+<h2>3.3 Propiedades</h2>
+
+<h3>Texto</h3>
+<p class="texto">Texto centrado con estilo</p>
+
+<h3>Colores</h3>
+<div class="caja color1">Color HEX</div>
+<div class="caja color2">Color RGB</div>
+
+<h3>Tamaño</h3>
+<div class="caja">Caja con width y height</div>
+
+<h3>Fondo</h3>
+<div class="caja" style="background: lightblue;">Fondo color</div>
+
+<h3>Bordes</h3>
+<div class="caja" style="border-radius: 10px;">Bordes redondeados</div>
+
+<h3>Sombras</h3>
+<div class="caja sombra">Caja con sombra</div>
+
+<h3>Transformaciones</h3>
+<div class="caja transformar">Pasa el mouse</div>
+
+<h3>Transiciones</h3>
+<div class="transicion">Hover animado</div>
+
+<h3>Animaciones</h3>
+<div class="animacion"></div>
+
+</section>
+
+</main>
+
+<footer>
+    <p>Fin del Capítulo 3</p>
+</footer>
+
+</body>
+</html>

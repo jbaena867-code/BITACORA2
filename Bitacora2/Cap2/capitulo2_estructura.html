@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.1 Estructura HTML</title>
+    <link rel="stylesheet" href="../estilos.css">
+
+    <style>
+        section {
+            margin-bottom: 40px;
+        }
+
+        code {
+            background: #eee;
+            padding: 3px;
+        }
+
+        .ejemplo {
+            border: 2px solid black;
+            margin: 10px 0;
+        }
+
+        header, nav, main, section, article, aside, footer {
+            padding: 10px;
+        }
+
+        header { background: #333; color: white; }
+        nav { background: #555; color: white; }
+        main { background: #f4f4f4; }
+        section { background: #ddd; }
+        article { background: #bbb; }
+        aside { background: #999; }
+        footer { background: #333; color: white; text-align: center; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="capitulo2.html">Regresar</a>
+</nav>
+
+<main>
+
+<h1>2.1 Estructura en HTML</h1>
+<p>La estructura HTML define cómo se organiza el contenido de una página web.</p>
+
+<!-- ================= DOCTYPE ================= -->
+<section>
+<h2>Tipo de documento</h2>
+
+<p>Todo documento HTML debe comenzar con:</p>
+
+<code>&lt;!DOCTYPE html&gt;</code>
+
+<p>Esto indica al navegador que estamos usando HTML5.</p>
+
+</section>
+
+<!-- ================= ESTRUCTURA BASICA ================= -->
+<section>
+<h2>Estructura básica</h2>
+
+<p>Una página HTML tiene esta estructura mínima:</p>
+
+<pre>
+<code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Título&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        Contenido
+    &lt;/body&gt;
+&lt;/html&gt;
+</code>
+</pre>
+
+<ul>
+    <li><strong>html:</strong> contiene toda la página</li>
+    <li><strong>head:</strong> información (no visible)</li>
+    <li><strong>body:</strong> contenido visible</li>
+</ul>
+
+</section>
+
+<!-- ================= ELEMENTOS ESTRUCTURALES ================= -->
+<section>
+<h2>Elementos estructurales</h2>
+
+<p>HTML5 introduce etiquetas para organizar mejor el contenido:</p>
+
+<ul>
+    <li><code>&lt;header&gt;</code>: encabezado</li>
+    <li><code>&lt;nav&gt;</code>: menú de navegación</li>
+    <li><code>&lt;main&gt;</code>: contenido principal</li>
+    <li><code>&lt;section&gt;</code>: sección</li>
+    <li><code>&lt;article&gt;</code>: contenido independiente</li>
+    <li><code>&lt;aside&gt;</code>: contenido secundario</li>
+    <li><code>&lt;footer&gt;</code>: pie de página</li>
+</ul>
+
+</section>
+
+<!-- ================= EJEMPLO VISUAL ================= -->
+<section>
+<h2>Ejemplo visual de estructura</h2>
+
+<div class="ejemplo">
+
+<header>Header (Encabezado)</header>
+
+<nav>Nav (Menú)</nav>
+
+<main>
+    <section>
+        Section (Sección)
+        <article>
+            Article (Artículo)
+        </article>
+    </section>
+
+    <aside>
+        Aside (Contenido secundario)
+    </aside>
+</main>
+
+<footer>Footer (Pie de página)</footer>
+
+</div>
+
+</section>
+
+<!-- ================= ATRIBUTOS ================= -->
+<section>
+<h2>Atributos globales</h2>
+
+<p>Son atributos que se pueden usar en casi todas las etiquetas:</p>
+
+<ul>
+    <li><code>id</code>: identifica un elemento único</li>
+    <li><code>class</code>: agrupa elementos</li>
+    <li><code>style</code>: aplica estilos directos</li>
+    <li><code>title</code>: muestra información al pasar el mouse</li>
+</ul>
+
+<h3>Ejemplo:</h3>
+
+<p id="texto1" class="importante" title="Este es un tooltip :p">
+    Pasa el mouse sobre este texto
+</p>
+
+</section>
+
+<!-- ================= BUENAS PRACTICAS ================= -->
+<section>
+<h2>Buenas prácticas</h2>
+
+<ul>
+    <li>Usar etiquetas semánticas (header, main, footer)</li>
+    <li>Mantener una estructura clara</li>
+    <li>No abusar de divs innecesarios</li>
+    <li>Separar HTML y CSS</li>
+</ul>
+
+</section>
+
+</main>
+
+<footer>
+    <p>Fin de la sección 2.1</p>
+</footer>
+
+</body>
+</html>

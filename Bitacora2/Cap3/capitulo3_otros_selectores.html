@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3.2 Otros selectores útiles CSS - Explicado</title>
+<link rel="stylesheet" href="../estilos.css">
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    line-height: 1.6;
+}
+
+h1, h2 {
+    color: #2c3e50;
+}
+
+code {
+    background: #eee;
+    padding: 2px 5px;
+    font-family: monospace;
+}
+
+pre {
+    background: #f4f4f4;
+    padding: 10px;
+    overflow-x: auto;
+}
+
+.ejemplo {
+    border: 2px solid black;
+    padding: 15px;
+    margin-top: 10px;
+}
+
+a {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    text-decoration: none;
+    border: 1px solid black;
+    color: black;
+}
+
+div.demo-box {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid gray;
+}
+
+a[href="https://google.com"] { color: red; font-weight: bold; }
+
+input[type] { border: 2px solid blue; }
+
+input[type] { border: 2px solid blue; }
+
+a[href*="insta"] { text-decoration: underline; color: purple; }
+
+</style>
+</head>
+<body>
+
+<nav>
+<a href="capitulo3_referencias.html      ">Regresar</a>
+</nav>
+
+<main>
+
+<h1>3.2 Otros selectores útiles en CSS</h1>
+
+<p>En CSS existen selectores más avanzados que permiten apuntar a elementos de manera muy precisa, basándose en atributos, posición o relación con otros elementos. Usarlos correctamente facilita el mantenimiento del código y evita agregar clases innecesarias.</p>
+
+<section>
+<h2>1. Selectores de atributo</h2>
+
+<p>Estos selectores permiten aplicar estilos a elementos HTML en función de sus atributos, por ejemplo <code>type</code>, <code>href</code> o <code>src</code>. Son muy útiles cuando no quieres añadir una clase para cada elemento.</p>
+
+<h3>[atributo]</h3>
+<p>Selecciona todos los elementos que tengan un atributo específico, sin importar su valor. Por ejemplo:</p>
+<pre><code>input[type] { border: 2px solid blue; }</code></pre>
+<p>Este estilo aplica a cualquier <code>&lt;input&gt;</code> que tenga un atributo <code>type</code>, como <code>text</code>, <code>email</code> o <code>password</code>.  
+Esto evita tener que usar clases en cada input.</p>
+
+<div class="ejemplo">
+<input type="text" placeholder="Campo 1">
+<input placeholder="Campo 2">
+<input type="email" placeholder="Correo">
+</div>
+
+<h3>[atributo="valor"]</h3>
+<p>Selecciona elementos cuyo atributo tenga exactamente un valor específico.  
+Por ejemplo, si solo queremos afectar un enlace a Google:</p>
+<pre><code>a[href="https://google.com"] { color: red; font-weight: bold; }</code></pre>
+<p>Esto evita afectar otros enlaces que puedan apuntar a Facebook, Gmail o cualquier otra página.</p>
+
+<div class="ejemplo">
+<a href="https://google.com">Google</a>
+<a href="https://facebook.com">Facebook</a>
+</div>
+
+<h3>[atributo^="valor"]</h3>
+<p>Selecciona elementos cuyo atributo <em>comience</em> con un valor determinado.  
+Por ejemplo:</p>
+<pre><code>a[href^="https://g"] { background-color: yellow; }</code></pre>
+<p>Esto seleccionará todos los enlaces cuyo <code>href</code> empiece con la letra <code>g</code>, como Google o Gmail.</p>
+
+<h3>[atributo$="valor"]</h3>
+<p>Selecciona elementos cuyo atributo <em>termine</em> con un valor específico, útil para extensiones de archivos:</p>
+<pre><code>a[href$=".jpg"] { color: green; font-weight: bold; }</code></pre>
+<p>Esto aplica solo a enlaces que terminan en ".jpg", ignorando PDF, PNG u otros archivos.</p>
+
+<h3>[atributo*="valor"]</h3>
+<p>Selecciona elementos cuyo atributo <em>contenga</em> un valor en cualquier parte.  
+Muy útil para buscar palabras dentro de atributos largos:</p>
+<pre><code>a[href*="insta"] { text-decoration: underline; color: purple; }</code></pre>
+<p>Esto afectará cualquier enlace que contenga la palabra "insta", como Instagram.</p>
+
+<div class="ejemplo">
+<a href="https://google.com">Google</a>
+<a href="https://facebook.com">Facebook</a>
+<a href="https://instagram.com">Instagram</a>
+</div>
+
+</section>
+
+<section>
+<h2>2. Combinaciones de selectores avanzados</h2>
+<p>Además de los selectores de atributo, CSS permite combinaciones que dependen de la relación entre elementos.</p>
+
+<h3>Selector descendiente (espacio)</h3>
+<p>Aplica estilos a todos los elementos dentro de otro elemento.  
+Por ejemplo, si quieres cambiar todos los párrafos dentro de un div:</p>
+<pre><code>div p { color: brown; }</code></pre>
+
+<div class="ejemplo demo-box">
+<div>
+<p>Texto dentro de un div</p>
+<p>Otro párrafo dentro del div</p>
+</div>
+</div>
+
+<h3>Selector hijo directo (&gt;)</h3>
+<p>Selecciona solo los hijos directos de un elemento, ignorando los descendientes más profundos:</p>
+<pre><code>div > p { font-weight: bold; }</code></pre>
+
+<div class="ejemplo demo-box">
+<div>
+<p>Primer hijo directo</p>
+<div>
+<p>Hijo de hijo (no aplica)</p>
+</div>
+</div>
+</div>
+
+<h3>Selector adyacente (+)</h3>
+<p>Selecciona un elemento que sigue inmediatamente después de otro:</p>
+<pre><code>h3 + p { color: orange; font-style: italic; }</code></pre>
+
+<div class="ejemplo demo-box">
+<h3>Encabezado</h3>
+<p>Párrafo que sigue al encabezado</p>
+<p>Otro párrafo</p>
+</div>
+
+<h3>Selector de hermanos (~)</h3>
+<p>Selecciona todos los elementos hermanos que siguen a un elemento específico:</p>
+<pre><code>h3 ~ p { background-color: #f0f0f0; }</code></pre>
+
+<div class="ejemplo demo-box">
+<h3>Título</h3>
+<p>Primer párrafo</p>
+<p>Segundo párrafo</p>
+<p>Tercer párrafo</p>
+</div>
+
+</section>
+
+<section>
+<h2>Buenas prácticas</h2>
+<ul>
+<li>Usar selectores de atributo y combinaciones solo cuando sea necesario.</li>
+<li>Evitar selectores demasiado complejos, pueden dificultar mantenimiento.</li>
+<li>Combinar con clases para mayor claridad y control.</li>
+<li>Probar en diferentes navegadores, algunos selectores avanzados se comportan distinto.</li>
+<li>Documentar tus selectores complejos con comentarios en CSS.</li>
+</ul>
+</section>
+
+</main>
+
+<footer>
+<p>Fin de la sección 3.2 - Otros selectores útiles explicados</p>
+</footer>
+
+</body>
+</html>
+</html>

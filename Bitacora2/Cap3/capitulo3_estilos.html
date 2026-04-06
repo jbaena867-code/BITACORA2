@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3.1 Estilos CSS</title>
+<link rel="stylesheet" href="../estilos.css">
+
+<style>
+/* ===== GENERAL ===== */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+}
+
+section {
+    margin-bottom: 50px;
+}
+
+h2 {
+    color: #2c3e50;
+}
+
+code {
+    background: #eee;
+    padding: 3px;
+}
+
+pre {
+    background: #f4f4f4;
+    padding: 10px;
+    overflow-x: auto;
+}
+
+/* ===== DEMOS VISUALES ===== */
+.ejemplo {
+    border: 2px solid black;
+    padding: 15px;
+    margin-top: 10px;
+}
+
+.ejemplo2 {
+    border: 2px solid black;
+    padding: 15px;
+    margin-top: 10px;
+    color: blue; 
+    font-size:18px;
+}
+
+.texto-demo {
+    padding: 10px;
+    margin: 10px 0;
+}
+
+/* ===== CLASES DEMO ===== */
+.rojo { color: red; }
+.azul { color: blue; }
+.fondo { background: lightgray; }
+.grande { font-size: 2rem; }
+.miclase { font-weight: bold; }
+
+</style>
+</head>
+<body>
+
+<nav>
+    <a href="capitulo3.html">Regresar</a>
+</nav>
+
+<main>
+
+<h1>3.1 Estilos en CSS</h1>
+<p>CSS (Cascading Style Sheets) permite dar estilos a tu HTML: colores, tamaños, fondos, fuentes y más.</p>
+
+<!-- ================= APLICANDO ESTILOS ================= -->
+<section>
+<h2>Aplicando estilos</h2>
+
+<p>Hay varias formas de aplicar estilos:</p>
+
+<h3>1. Estilo en línea (inline)</h3>
+
+<pre><code>&lt;p style="color:red; font-size:20px;"&gt;Hola&lt;/p&gt;</code></pre>
+
+<div class="ejemplo">
+<p style="color:red; font-size:20px;">Hola, estilo en línea</p>
+</div>
+
+<h3>2. Estilo interno (internal)</h3>
+
+<p>Se coloca dentro de la etiqueta <code>&lt;style&gt;</code> en el <code>&lt;head&gt;</code>.</p>
+
+<pre><code>
+&lt;style&gt;
+p { color: blue; font-size:18px; }
+&lt;/style&gt;
+</code></pre>
+
+<div class="ejemplo2">
+<p>Hola, estilo interno</p>
+</div>
+
+<h3>3. Estilo externo (external)</h3>
+
+<p>Se crea un archivo <code>estilos.css</code> y se enlaza con <code>&lt;link&gt;</code>.</p>
+
+<pre><code>&lt;link rel="stylesheet" href="estilos.css"&gt;</code></pre>
+
+<p>Es la forma más recomendable para proyectos grandes.</p>
+
+</section>
+
+<!-- ================= HOJAS DE ESTILO EN CASCADA ================= -->
+<section>
+<h2>Hojas de estilo en cascada (Cascading)</h2>
+
+<p>Si un elemento tiene varios estilos aplicados, se aplican en este orden:</p>
+
+<ol>
+<li>Estilo por defecto del navegador</li>
+<li>Estilo externo</li>
+<li>Estilo interno</li>
+<li>Estilo en línea</li>
+</ol>
+
+<p>Esto se llama la <strong>cascada</strong> en CSS.</p>
+
+<div class="ejemplo">
+<p style="color:red;" class="azul">Este texto se verá rojo porque el estilo en línea tiene prioridad sobre la clase azul</p>
+</div>
+
+</section>
+
+<!-- ================= SELECTORES BASICOS ================= -->
+<section>
+<h2>Selectores básicos</h2>
+
+<h3>Etiqueta</h3>
+<pre><code>p { color: green; }</code></pre>
+
+<h3>Clase</h3>
+<pre><code>.miclase { font-weight: bold; }</code></pre>
+
+<h3>ID</h3>
+<pre><code>#miId { font-size: 20px; }</code></pre>
+
+<h3>Combinados</h3>
+<pre><code>div p { color: purple; }</code></pre>
+
+<div class="ejemplo">
+<p class="miclase">Texto con clase miClase</p>
+<p id="miId">Texto con ID miId</p>
+</div>
+<button></button>
+</section>
+
+<!-- ================= PROPIEDADES BASICAS ================= -->
+<section>
+<h2>Propiedades básicas</h2>
+
+<h3>Color y fondo</h3>
+<div class="ejemplo rojo fondo">Texto rojo sobre fondo gris</div>
+
+<h3>Fuente y tamaño</h3>
+<div class="ejemplo azul grande">Texto azul grande</div>
+
+<h3>Márgenes y padding</h3>
+
+<div class="ejemplo" style="margin:20px; padding:20px; background: #eee;">Caja con margen y padding</div>
+
+<h3>Bordes</h3>
+<div class="ejemplo" style="border: 3px dashed green;">Caja con borde</div>
+
+</section>
+
+<!-- ================= SEUDOCLASSES ================= -->
+<section>
+<h2>Seudoclases</h2>
+
+<p>Permiten aplicar estilos a estados especiales.</p>
+
+<ul>
+<li><code>:hover</code> → cuando el mouse pasa sobre el elemento</li>
+<li><code>:active</code> → cuando se hace clic</li>
+<li><code>:first-child</code> → primer hijo de un contenedor</li>
+<li><code>:last-child</code> → último hijo</li>
+</ul>
+
+<div class="ejemplo">
+<a href="#" style="color:black;" onmouseover="this.style.color='red';" onmouseout="this.style.color='black'">Ejemplo hover</a>
+</div>
+
+</section>
+
+<!-- ================= BUENAS PRACTICAS ================= -->
+<section>
+<h2>Buenas prácticas</h2>
+
+<ul>
+<li>Usar clases y selectores de forma clara</li>
+<li>Evitar estilos en línea cuando sea posible</li>
+<li>Organizar CSS en archivos externos</li>
+<li>Usar nombres descriptivos para clases e IDs</li>
+<li>Probar los estilos en diferentes navegadores</li>
+</ul>
+
+</section>
+
+</main>
+
+<footer>
+    <p>Fin de la sección 3.1</p>
+</footer>
+
+</body>
+</html>
